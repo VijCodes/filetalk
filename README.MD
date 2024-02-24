@@ -1,4 +1,4 @@
-## 🚀 Quick Start
+## 🚀 Quick Start (Currently in Progress - Doesn't work yet)
 
 FileTalk simplifies your file searches in command line
 
