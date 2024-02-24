@@ -1,0 +1,1 @@
+this is a test folder, in order to test local doc search
