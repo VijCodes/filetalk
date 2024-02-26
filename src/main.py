@@ -2,7 +2,7 @@ import argparse
 import numpy as np
 import os
 from sentence_transformers import SentenceTransformer
-from .utils.file_system_utils import FolderNode, build_tree, print_tree, fetch_parents, embedding_model
+from .filetalk.utils.file_system_utils import FolderNode, build_tree, print_tree, fetch_parents, embedding_model
 
 def main():
     '''
