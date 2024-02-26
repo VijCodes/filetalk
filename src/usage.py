@@ -4,12 +4,12 @@ import sys
 from sentence_transformers import SentenceTransformer
 import importlib.util
 
-sys.path.append('/Users/vijaykatta/Documents/Projects/Local Document Search')
-sys.path.append('/Users/vijaykatta/Documents/Projects/Local Document Search/utils')
+sys.path.append('/Users/vijaykatta/Documents/Projects/local_doc_search')
+sys.path.append('/Users/vijaykatta/Documents/Projects/local_doc_search/utils')
 from utils.file_system_utils import FolderNode, build_tree, print_tree, fetch_parents, embedding_model
 
 # Specify the root directory you want to analyze
-root_directory = '/Users/vijaykatta/Documents/Projects/Local Document Search'
+root_directory = '/Users/vijaykatta/Documents/Projects/local_doc_search'
 
 # Build the tree
 tree_root = build_tree(root_directory)

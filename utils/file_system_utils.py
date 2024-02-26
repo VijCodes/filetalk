@@ -1,5 +1,5 @@
 import os
-from model_utils import embedding_model
+from .model_utils import embedding_model
 
 class FolderNode:
     '''
@@ -19,15 +19,17 @@ class FolderNode:
 
     def _embed_readme(self):
         '''
-        Creates an embedding based on text in readme
+        Creates an embedding based on text in readme, with case-insensitive file name comparison.
         '''
-        readme_path = os.path.join(self.path, 'README.md')
-        if os.path.exists(readme_path):
-            with open(readme_path, 'r') as file:
-                content = file.read()
-                self.readme_content = content  # Store README content
-                # Generate the embedding for the README content
-                return embedding_model.encode(content)
+        # Convert all file names in the directory to lowercase and check for 'readme.md'
+        for entry in os.listdir(self.path):
+            if entry.lower() == 'readme.md':  # Direct comparison after converting to lowercase
+                readme_path = os.path.join(self.path, entry)
+                with open(readme_path, 'r') as file:
+                    content = file.read()
+                    self.readme_content = content  # Store README content
+                    # Generate the embedding for the README content
+                    return embedding_model.encode(content)
         return None
 
 def build_tree(path, parent=None):

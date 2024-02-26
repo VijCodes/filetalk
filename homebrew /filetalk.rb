@@ -1,14 +1,11 @@
-class Filetalk < Formula
-  include Language::Python::Virtualenv
-
-  desc "Simplifies your file searches in command line"
+class FileTalk < Formula
+  desc "Easy way to search for folders"
   homepage "https://github.com/VijCodes/filetalk"
-  url "https://files.pythonhosted.org/packages/source/f/filetalk/filetalk-0.1.0.tar.gz"  # Example URL, replace with actual
-  sha256 "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"  # Example SHA-256, replace with actual
-
-  depends_on "python@3.9"
+  url "/Users/vijaykatta/Documents/Projects/local_doc_search.tar.gz"
+  sha256 "60f2920f8ae20c5e2337585ee1fb28e385d4a10006604c32d75bdb96d5c544e8"
 
   def install
-    virtualenv_install_with_resources
+    bin.install "filetalk"
   end
+  
 end
